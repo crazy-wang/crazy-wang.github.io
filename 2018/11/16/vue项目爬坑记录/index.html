@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vue,实战,">
 
 
 
@@ -79,13 +79,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。话不多说，直接上干货。 1、详解vue打包后静态资源路径不正确问题描述：vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，">
+<meta name="keywords" content="vue,实战">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue实战爬坑记录">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/vue项目爬坑记录/index.html">
 <meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。话不多说，直接上干货。 1、详解vue打包后静态资源路径不正确问题描述：vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_1.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_1.2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_2.png">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_3.png">
+<meta property="og:updated_time" content="2018-11-16T08:33:15.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
+<meta name="twitter:title" content="vue实战爬坑记录">
+<meta name="twitter:description" content="本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。话不多说，直接上干货。 1、详解vue打包后静态资源路径不正确问题描述：vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/16/images/vue_1.png">
 
 
 
@@ -115,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/vue项目爬坑记录/">
 
 
 
 
 
-  <title>My Blog</title>
+  <title>vue实战爬坑记录 | My Blog</title>
   
 
 
@@ -140,8 +150,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/crazy-wang"><img style="position: absolute; z-index: 9; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -244,9 +253,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/16/vue项目爬坑记录/" itemprop="url">vue实战爬坑记录</a></h1>
+          <h1 class="post-title" itemprop="name headline">vue实战爬坑记录</h1>
         
 
         <div class="post-meta">
@@ -328,9 +335,7 @@
       
 
       
-        
-          
-            <p>本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。<br>由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。<br>话不多说，直接上干货。</p>
+        <p>本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。<br>由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。<br>话不多说，直接上干货。</p>
 <h1 id="1、详解vue打包后静态资源路径不正确"><a href="#1、详解vue打包后静态资源路径不正确" class="headerlink" title="1、详解vue打包后静态资源路径不正确"></a>1、详解vue打包后静态资源路径不正确</h1><h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，常见的有两个: js,css路径不对或者css引用图片资源不对</p>
 <h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>1 js,css路径不对：打开config/index.js,将其中的assetsPublicPath值改为相对路径’./‘<br><img src="../images/vue_1.png" alt="实例"><br>2 css中引用的图片资源找不到：打开“build/utils.js”，增加一行代码即可<br><img src="../images/vue_1.2.png" alt="实例"></p>
 <h2 id="Tips-其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。"><a href="#Tips-其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。" class="headerlink" title="Tips:其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。"></a><font color="#f33" size="3">Tips:其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。</font></h2><h1 id="2、vue-cli启动本地服务局域网不能访问的原因分析"><a href="#2、vue-cli启动本地服务局域网不能访问的原因分析" class="headerlink" title="2、vue-cli启动本地服务局域网不能访问的原因分析"></a>2、vue-cli启动本地服务局域网不能访问的原因分析</h1><h2 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h2><p>用vue-cli在本地搭建脚手架启动服务后，默认只能通过localhost:8080(端口号)访问，同一局域网下其他的手机和电脑并不能通过ip地址访问调试。<br>这个在vue2x之前的几个版本是可以通过修改ip来访问的，但是更新几次后的新脚手架就不可以了，需要手动修改一些配置参数。</p>
@@ -338,8 +343,6 @@
 <h2 id="Tips-不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0-0-0-0ip的形式启动，需要手动改导航地址为localhost来调试。"><a href="#Tips-不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0-0-0-0ip的形式启动，需要手动改导航地址为localhost来调试。" class="headerlink" title="Tips:不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0.0.0.0ip的形式启动，需要手动改导航地址为localhost来调试。"></a><font color="#f33" size="3">Tips:不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0.0.0.0ip的形式启动，需要手动改导航地址为localhost来调试。</font></h2><h1 id="3、vue项目打包上传服务器后在IE浏览器下空白屏"><a href="#3、vue项目打包上传服务器后在IE浏览器下空白屏" class="headerlink" title="3、vue项目打包上传服务器后在IE浏览器下空白屏"></a>3、vue项目打包上传服务器后在IE浏览器下空白屏</h1><h2 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h2><p>我们都知道，vue对低版本浏览器是不兼容的(ie9+)，我们要向着现代化进行，这很好。然而当我们把项目打包后扔到服务器上，谷歌等显示正常，在IE11下居然空白页。。。这是什么鬼。控制台还报错什么promise,,,babel-polyfill的(记不清了)我尼玛。。。老板一顿?????</p>
 <h2 id="解决方法：-2"><a href="#解决方法：-2" class="headerlink" title="解决方法："></a>解决方法：</h2><p>原来是promise的锅，这锅我可不背啊。<br>ES6中的Promise,而IE浏览器是不支持它的，，没关系。babel-polyfill插件帮你解决。<br>通过安装babel-polyfill，<code>npm i babel-polyfill -D</code>  之后在入口main.js文件中引入：<code>import &#39;babel-polyfill&#39;</code>。然后在build文件夹下的webpack.base.conf.js中的app入口路径改一下（详见下图），重启项目就好了。IE下也是美滋滋<br><img src="../images/vue_3.png" alt=""></p>
 <h2 id="Tips-我自己私下做过测试，其实有更简单的方法。那就是直接装包，main-js中引入就好了，根本不用在去设置什么其他的webpack-base-conf-js。"><a href="#Tips-我自己私下做过测试，其实有更简单的方法。那就是直接装包，main-js中引入就好了，根本不用在去设置什么其他的webpack-base-conf-js。" class="headerlink" title="Tips:我自己私下做过测试，其实有更简单的方法。那就是直接装包，main.js中引入就好了，根本不用在去设置什么其他的webpack.base.conf.js。"></a><font color="#f33" size="3">Tips:我自己私下做过测试，其实有更简单的方法。那就是直接装包，main.js中引入就好了，根本不用在去设置什么其他的webpack.base.conf.js。</font></h2>
-          
-        
       
     </div>
     
@@ -354,262 +357,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/博客名/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王政奇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/13/博客名/" itemprop="url">Hello,Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T11:46:53+08:00">
-                2018-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
-            
+            <a href="/tags/实战/" rel="tag"># 实战</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用Hexo，是非常简单的一件事。测试文本</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="王政奇">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/13/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T10:57:41+08:00">
-                2018-11-13
-              </time>
+              <a href="/2018/11/13/博客名/" rel="next" title="Hello,Hexo">
+                <i class="fa fa-chevron-left"></i> Hello,Hexo
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -619,10 +398,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -630,6 +410,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -650,8 +434,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -704,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、详解vue打包后静态资源路径不正确"><span class="nav-number">1.</span> <span class="nav-text">1、详解vue打包后静态资源路径不正确</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述："><span class="nav-number">1.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法："><span class="nav-number">1.2.</span> <span class="nav-text">解决方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips-其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。"><span class="nav-number">1.3.</span> <span class="nav-text">Tips:其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、vue-cli启动本地服务局域网不能访问的原因分析"><span class="nav-number">2.</span> <span class="nav-text">2、vue-cli启动本地服务局域网不能访问的原因分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述：-1"><span class="nav-number">2.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法：-1"><span class="nav-number">2.2.</span> <span class="nav-text">解决方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips-不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0-0-0-0ip的形式启动，需要手动改导航地址为localhost来调试。"><span class="nav-number">2.3.</span> <span class="nav-text">Tips:不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0.0.0.0ip的形式启动，需要手动改导航地址为localhost来调试。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、vue项目打包上传服务器后在IE浏览器下空白屏"><span class="nav-number">3.</span> <span class="nav-text">3、vue项目打包上传服务器后在IE浏览器下空白屏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述：-2"><span class="nav-number">3.1.</span> <span class="nav-text">问题描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法：-2"><span class="nav-number">3.2.</span> <span class="nav-text">解决方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips-我自己私下做过测试，其实有更简单的方法。那就是直接装包，main-js中引入就好了，根本不用在去设置什么其他的webpack-base-conf-js。"><span class="nav-number">3.3.</span> <span class="nav-text">Tips:我自己私下做过测试，其实有更简单的方法。那就是直接装包，main.js中引入就好了，根本不用在去设置什么其他的webpack.base.conf.js。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -858,6 +667,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
