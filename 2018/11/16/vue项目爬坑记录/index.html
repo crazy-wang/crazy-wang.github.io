@@ -87,15 +87,15 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。话不多说，直接上干货。 1、详解vue打包后静态资源路径不正确问题描述：vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_1.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_1.2.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_2.png">
-<meta property="og:image" content="http://yoursite.com/2018/11/16/images/vue_3.png">
-<meta property="og:updated_time" content="2018-11-16T08:33:15.954Z">
+<meta property="og:image" content="http://yoursite.com/images/vue_1.png">
+<meta property="og:image" content="http://yoursite.com/images/vue_1.2.png">
+<meta property="og:image" content="http://yoursite.com/images/vue_2.png">
+<meta property="og:image" content="http://yoursite.com/images/vue_3.png">
+<meta property="og:updated_time" content="2018-11-16T08:45:39.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue实战爬坑记录">
 <meta name="twitter:description" content="本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。话不多说，直接上干货。 1、详解vue打包后静态资源路径不正确问题描述：vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/16/images/vue_1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/vue_1.png">
 
 
 
@@ -337,11 +337,11 @@
       
         <p>本章会总结博主实战过程中遇到的一些vue2.0爬坑记录及解决方法。一方面用来自己总结复盘，日后方便查看。另一方面可以为广大developer参考借鉴，贡献自己的一份薄力。<br>由于时间原因，文章篇幅尽量简短精炼。先暂更一部分，后期会不断维护进去。<br>话不多说，直接上干货。</p>
 <h1 id="1、详解vue打包后静态资源路径不正确"><a href="#1、详解vue打包后静态资源路径不正确" class="headerlink" title="1、详解vue打包后静态资源路径不正确"></a>1、详解vue打包后静态资源路径不正确</h1><h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>vue项目完成打包上线的时候很多人都会碰到静态资源找不到的问题，并且控制台报错路径问题，常见的有两个: js,css路径不对或者css引用图片资源不对</p>
-<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>1 js,css路径不对：打开config/index.js,将其中的assetsPublicPath值改为相对路径’./‘<br><img src="../images/vue_1.png" alt="实例"><br>2 css中引用的图片资源找不到：打开“build/utils.js”，增加一行代码即可<br><img src="../images/vue_1.2.png" alt="实例"></p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>1 js,css路径不对：打开config/index.js,将其中的assetsPublicPath值改为相对路径’./‘<br><img src="/images/vue_1.png" alt="实例"><br>2 css中引用的图片资源找不到：打开“build/utils.js”，增加一行代码即可<br><img src="/images/vue_1.2.png" alt="实例"></p>
 <h2 id="Tips-其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。"><a href="#Tips-其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。" class="headerlink" title="Tips:其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。"></a><font color="#f33" size="3">Tips:其实当你把静态资源如图片文档等都放到staic下的时候，打包后是不存在2的找不到的问题的。</font></h2><h1 id="2、vue-cli启动本地服务局域网不能访问的原因分析"><a href="#2、vue-cli启动本地服务局域网不能访问的原因分析" class="headerlink" title="2、vue-cli启动本地服务局域网不能访问的原因分析"></a>2、vue-cli启动本地服务局域网不能访问的原因分析</h1><h2 id="问题描述：-1"><a href="#问题描述：-1" class="headerlink" title="问题描述："></a>问题描述：</h2><p>用vue-cli在本地搭建脚手架启动服务后，默认只能通过localhost:8080(端口号)访问，同一局域网下其他的手机和电脑并不能通过ip地址访问调试。<br>这个在vue2x之前的几个版本是可以通过修改ip来访问的，但是更新几次后的新脚手架就不可以了，需要手动修改一些配置参数。</p>
-<h2 id="解决方法：-1"><a href="#解决方法：-1" class="headerlink" title="解决方法："></a>解决方法：</h2><p>找到config文件夹下的index.js文件,修改host:“localhost”为 host:”0.0.0.0”,此时同一局域网下的手机和其他电脑能通过ip查看到页面<br><img src="../images/vue_2.png" alt=""></p>
+<h2 id="解决方法：-1"><a href="#解决方法：-1" class="headerlink" title="解决方法："></a>解决方法：</h2><p>找到config文件夹下的index.js文件,修改host:“localhost”为 host:”0.0.0.0”,此时同一局域网下的手机和其他电脑能通过ip查看到页面<br><img src="/images/vue_2.png" alt=""></p>
 <h2 id="Tips-不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0-0-0-0ip的形式启动，需要手动改导航地址为localhost来调试。"><a href="#Tips-不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0-0-0-0ip的形式启动，需要手动改导航地址为localhost来调试。" class="headerlink" title="Tips:不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0.0.0.0ip的形式启动，需要手动改导航地址为localhost来调试。"></a><font color="#f33" size="3">Tips:不过在这里有一个小问题，那就是在修改后，每次重新启动服务会以0.0.0.0ip的形式启动，需要手动改导航地址为localhost来调试。</font></h2><h1 id="3、vue项目打包上传服务器后在IE浏览器下空白屏"><a href="#3、vue项目打包上传服务器后在IE浏览器下空白屏" class="headerlink" title="3、vue项目打包上传服务器后在IE浏览器下空白屏"></a>3、vue项目打包上传服务器后在IE浏览器下空白屏</h1><h2 id="问题描述：-2"><a href="#问题描述：-2" class="headerlink" title="问题描述："></a>问题描述：</h2><p>我们都知道，vue对低版本浏览器是不兼容的(ie9+)，我们要向着现代化进行，这很好。然而当我们把项目打包后扔到服务器上，谷歌等显示正常，在IE11下居然空白页。。。这是什么鬼。控制台还报错什么promise,,,babel-polyfill的(记不清了)我尼玛。。。老板一顿?????</p>
-<h2 id="解决方法：-2"><a href="#解决方法：-2" class="headerlink" title="解决方法："></a>解决方法：</h2><p>原来是promise的锅，这锅我可不背啊。<br>ES6中的Promise,而IE浏览器是不支持它的，，没关系。babel-polyfill插件帮你解决。<br>通过安装babel-polyfill，<code>npm i babel-polyfill -D</code>  之后在入口main.js文件中引入：<code>import &#39;babel-polyfill&#39;</code>。然后在build文件夹下的webpack.base.conf.js中的app入口路径改一下（详见下图），重启项目就好了。IE下也是美滋滋<br><img src="../images/vue_3.png" alt=""></p>
+<h2 id="解决方法：-2"><a href="#解决方法：-2" class="headerlink" title="解决方法："></a>解决方法：</h2><p>原来是promise的锅，这锅我可不背啊。<br>ES6中的Promise,而IE浏览器是不支持它的，，没关系。babel-polyfill插件帮你解决。<br>通过安装babel-polyfill，<code>npm i babel-polyfill -D</code>  之后在入口main.js文件中引入：<code>import &#39;babel-polyfill&#39;</code>。然后在build文件夹下的webpack.base.conf.js中的app入口路径改一下（详见下图），重启项目就好了。IE下也是美滋滋<br><img src="/images/vue_3.png" alt=""></p>
 <h2 id="Tips-我自己私下做过测试，其实有更简单的方法。那就是直接装包，main-js中引入就好了，根本不用在去设置什么其他的webpack-base-conf-js。"><a href="#Tips-我自己私下做过测试，其实有更简单的方法。那就是直接装包，main-js中引入就好了，根本不用在去设置什么其他的webpack-base-conf-js。" class="headerlink" title="Tips:我自己私下做过测试，其实有更简单的方法。那就是直接装包，main.js中引入就好了，根本不用在去设置什么其他的webpack.base.conf.js。"></a><font color="#f33" size="3">Tips:我自己私下做过测试，其实有更简单的方法。那就是直接装包，main.js中引入就好了，根本不用在去设置什么其他的webpack.base.conf.js。</font></h2>
       
     </div>
@@ -733,7 +733,7 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
 </html>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
