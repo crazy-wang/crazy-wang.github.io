@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,实战,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文分步骤给大家介绍vue给不同环境配置不同打包命令的方法，非常不错，具有一定的参考借鉴价值,需要的朋友可以参考下...">
+<meta name="keywords" content="vue,实战">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue不同环境下配置不同打包命令">
+<meta property="og:url" content="http://yoursite.com/2019/01/02/vue不同环境下配置不同打包命令/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="本文分步骤给大家介绍vue给不同环境配置不同打包命令的方法，非常不错，具有一定的参考借鉴价值,需要的朋友可以参考下...">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-02T08:57:05.416Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue不同环境下配置不同打包命令">
+<meta name="twitter:description" content="本文分步骤给大家介绍vue给不同环境配置不同打包命令的方法，非常不错，具有一定的参考借鉴价值,需要的朋友可以参考下...">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/02/vue不同环境下配置不同打包命令/">
+
+
+
+
+
+  <title>vue不同环境下配置不同打包命令 | My Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/crazy-wang"><img style="position: absolute; z-index: 9; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            其他
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/vue不同环境下配置不同打包命令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王政奇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue不同环境下配置不同打包命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T16:16:00+08:00">
+                2019-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本文分步骤给大家介绍vue给不同环境配置不同打包命令的方法，非常不错，具有一定的参考借鉴价值,需要的朋友可以参考下...
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>实际工作当中，我们再打包上生产和测试的时候，是有不同的apiurl接口地址的。这个时候我们当然可以在每次打包的时候手动更改apiurl,也不是很麻烦<br>不过，如果有更炫酷的操作，比如打包时指定不同的命令参数，就自动打包出不同环境的包，岂不是更好嘛。</p>
+<h2 id="话不多说，实战干活直接上。"><a href="#话不多说，实战干活直接上。" class="headerlink" title="话不多说，实战干活直接上。"></a>话不多说，实战干活直接上。</h2><h1 id="1、安装cross-env"><a href="#1、安装cross-env" class="headerlink" title="1、安装cross-env"></a>1、安装cross-env</h1><p>cross-env是个什么东西呢，自行百度吧（我也是百度了看了下，大概就是一个解决windows下不支持配置node进程process NODE_ENV的东西，有了它就可以跨平台设置及使用环境变量）</p>
+<p><code>npm i cross-env -D</code></p>
+<hr>
+<h1 id="2、修改各环境下的参数"><a href="#2、修改各环境下的参数" class="headerlink" title="2、修改各环境下的参数"></a>2、修改各环境下的参数</h1><p>在config/目录下添加test.env.js、prod.env.js两个文件（名字随便起哈；这里test代表上测试的打包配置；pre代表上预生产的；如果直接发生产,不需要预生产的，就不用写pre.env.js这个文件了；视具体业务而定）<br>修改prod.env.js里的内容，修改后的内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> NODE_ENV: <span class="string">'"production"'</span>,</span><br><span class="line"> EVN_CONFIG:<span class="string">'"prod"'</span>,</span><br><span class="line"> API_ROOT:<span class="string">'"https://api.schjddz.lenovo.com"'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意，上面的API_ROOT这类字段是随便起的，只要保证在其他地方引用的时候始终一致就好</p>
+<p>分别对test.env.js和pre.env.js文件内容进修修改，修改后的内容如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> NODE_ENV: <span class="string">'"testing"'</span>,</span><br><span class="line"> EVN_CONFIG:<span class="string">'"test"'</span>,</span><br><span class="line"> API_ROOT:<span class="string">'"https://api.cshjddz.lenovo.com"'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> NODE_ENV: <span class="string">'"presentation"'</span>,</span><br><span class="line"> EVN_CONFIG:<span class="string">'"pre"'</span>,</span><br><span class="line"> API_ROOT:<span class="string">'"https://api.yschjddz.lenovo.com"'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对dev.env.js文件内容进行修改，修改后的内容如下。(dev环境配制了服务代理，API_ROOT前的api是配制的代理地址。没有启动代理直接填dev的当前环境的地址就好)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = merge(prodEnv, &#123;</span><br><span class="line"> NODE_ENV: <span class="string">'"development"'</span>,</span><br><span class="line"> VN_CONFIG: <span class="string">'"dev"'</span>,</span><br><span class="line"> API_ROOT: <span class="string">'"api/apis/v1"'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="3、修改项目package-json文件"><a href="#3、修改项目package-json文件" class="headerlink" title="3、修改项目package.json文件"></a>3、修改项目package.json文件</h1><p>对package.json文件中的scripts内容进行个性化，添加上新定义的几种环境的打包过程，<span style="color: #f33;">里的参数与前面的调协保持一致</span>。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line"> <span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span>,</span><br><span class="line"> <span class="string">"start"</span>: <span class="string">"npm run dev"</span>,</span><br><span class="line"> <span class="string">"build"</span>: <span class="string">"node build/build.js"</span>,</span><br><span class="line"> <span class="string">"build:test"</span>: <span class="string">"cross-env NODE_ENV=production env_config=test node build/build.js"</span>,</span><br><span class="line"> <span class="string">"build:pre"</span>: <span class="string">"cross-env NODE_ENV=production env_config=pre node build/build.js"</span>,</span><br><span class="line"> <span class="string">"build:prod"</span>: <span class="string">"cross-env NODE_ENV=production env_config=prod node build/build.js"</span></span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="在这里，NODE-ENV最好都设成production，因为在utils-js只做了production一种判定，亲测不会影响各环境API参数。"><a href="#在这里，NODE-ENV最好都设成production，因为在utils-js只做了production一种判定，亲测不会影响各环境API参数。" class="headerlink" title="在这里，NODE_ENV最好都设成production，因为在utils.js只做了production一种判定，亲测不会影响各环境API参数。"></a>在这里，NODE_ENV最好都设成production，因为在utils.js只做了production一种判定，亲测不会影响各环境API参数。</h2><h1 id="4、修改config-index-js"><a href="#4、修改config-index-js" class="headerlink" title="4、修改config/index.js"></a>4、修改config/index.js</h1><p>修改config/index.js文件中build参数，就是为了不同命令不同环境调用不同文件；这里的参数会在build/webpackage.prod.conf.js中使用到(没有就加上去就好)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">build:&#123;</span><br><span class="line"> <span class="comment">// Template for index.html</span></span><br><span class="line"> <span class="comment">// 添加test pre prod 三处环境的配制</span></span><br><span class="line"> prodEnv: <span class="built_in">require</span>(<span class="string">'./prod.env'</span>),</span><br><span class="line"> preEnv: <span class="built_in">require</span>(<span class="string">'./pre.env'</span>),</span><br><span class="line"> testEnv: <span class="built_in">require</span>(<span class="string">'./test.env'</span>),</span><br><span class="line"> <span class="comment">//下面为原本的内容，不需要做任何个性化处理调整</span></span><br><span class="line"> index:path.resolve(__dirname,<span class="string">'../dist/index.html'</span>),</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="5：在webpackage-prod-conf-js中使用构建环境参数"><a href="#5：在webpackage-prod-conf-js中使用构建环境参数" class="headerlink" title="5：在webpackage.prod.conf.js中使用构建环境参数　"></a>5：在webpackage.prod.conf.js中使用构建环境参数　</h1><p>对build/webpackage.prod.conf.js文件进行修改，调整env常量的生成方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 个性env常量的定义</span></span><br><span class="line"><span class="comment">// const env = require('../config/prod.env')</span></span><br><span class="line"><span class="keyword">const</span> env = config.build[process.env.env_config+<span class="string">'Env'</span>]</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="6：调整build-build-js"><a href="#6：调整build-build-js" class="headerlink" title="6：调整build/build.js　"></a>6：调整build/build.js　</h1><p>删除process.env.NODE_ENV的赋值，修改spinner的定义，调整后的内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./check-versions'</span>)()</span><br><span class="line"><span class="comment">// 注释掉的代码</span></span><br><span class="line"><span class="comment">// process.env.NODE_ENV = 'production'</span></span><br><span class="line"><span class="keyword">const</span> ora = <span class="built_in">require</span>(<span class="string">'ora'</span>)</span><br><span class="line"><span class="keyword">const</span> rm = <span class="built_in">require</span>(<span class="string">'rimraf'</span>)</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'../config'</span>)</span><br><span class="line"><span class="keyword">const</span> webpackConfig = <span class="built_in">require</span>(<span class="string">'./webpack.prod.conf'</span>)</span><br><span class="line"><span class="comment">// 修改spinner的定义</span></span><br><span class="line"><span class="comment">// const spinner = ora('building for production...')</span></span><br><span class="line"><span class="keyword">var</span> spinner = ora(<span class="string">'building for '</span> + process.env.NODE_ENV + <span class="string">' of '</span> + process.env.env_config+ <span class="string">' mode...'</span> )</span><br><span class="line">spinner.start()</span><br><span class="line"><span class="comment">//更多的其它内容，不需要做任何调整的内容 ...</span></span><br></pre></td></tr></table></figure>
+<p>最后：</p>
+<p>执行npm run build:test打包的就是测试环境</p>
+<p>执行npm run build:prod打包的就是生产环境</p>
+<p>执行npm run build:pre打包的就是预生产环境</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/实战/" rel="tag"># 实战</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/27/vue状态管理—vuex应用解析/" rel="next" title="vuex状态管理—vuex应用解析">
+                <i class="fa fa-chevron-left"></i> vuex状态管理—vuex应用解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/blog-logo.jpg" alt="王政奇">
+            
+              <p class="site-author-name" itemprop="name">王政奇</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#话不多说，实战干活直接上。"><span class="nav-number">1.</span> <span class="nav-text">话不多说，实战干活直接上。</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#1、安装cross-env"><span class="nav-number"></span> <span class="nav-text">1、安装cross-env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、修改各环境下的参数"><span class="nav-number"></span> <span class="nav-text">2、修改各环境下的参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、修改项目package-json文件"><span class="nav-number"></span> <span class="nav-text">3、修改项目package.json文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在这里，NODE-ENV最好都设成production，因为在utils-js只做了production一种判定，亲测不会影响各环境API参数。"><span class="nav-number">1.</span> <span class="nav-text">在这里，NODE_ENV最好都设成production，因为在utils.js只做了production一种判定，亲测不会影响各环境API参数。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、修改config-index-js"><span class="nav-number"></span> <span class="nav-text">4、修改config/index.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5：在webpackage-prod-conf-js中使用构建环境参数"><span class="nav-number"></span> <span class="nav-text">5：在webpackage.prod.conf.js中使用构建环境参数　</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6：调整build-build-js"><span class="nav-number"></span> <span class="nav-text">6：调整build/build.js　</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王政奇</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">次</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">始于前端，不止于前端 &mdash;  v俺有小果果吃</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
