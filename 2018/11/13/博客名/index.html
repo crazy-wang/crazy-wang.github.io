@@ -403,6 +403,9 @@
           
 
   
+        <div id="gitalk-container"></div>
+
+  
 
 
 
@@ -675,6 +678,27 @@
 
 
 
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '063fbb07e1542d9bb14d',
+          clientSecret: 'ea9802975542c0d33a26069bfda74a8809209953',
+          repo: 'xr_todolist',
+          owner: 'crazy-wang',
+          admin: ['['crazy-wang']'],
+          id:'gitalk_20181113114653',
+          labels: 'gitalk',
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
